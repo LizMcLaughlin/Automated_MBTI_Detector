@@ -2,6 +2,28 @@
 
 My focus is using Deep Learning tools to improve upon previous attempts at classifying personality type from written text. I am using the Myers-Briggs Personality Type Indicator, which is one of the more widely used today for practical applications that range from hiring to counseling. I test a variety of models to find an optimal approach. In the end, I was able to outperform the previous works with a binary classification model for the 4 categories of personality, using a sigmoid activation function and cross entropy as my loss. Average accuracy across the 4 categories is 84%.
 
+## Models
+Each model run with feature spaces of (500 -v- 1000) for epochs (100 -v- 3000), using Adam and gradient descent w/ momentum optimizers.
+
+
+- Model 1: 
+Multi-class classifier - single layer categorical sequential
+16 classes: ISTJ, ISFJ, INFJ, INTJ, ISTP, ISFP, INFP, INTP, ESTP, ESFP, ENFP, ENTP, ESTJ, ENFJ, ENTJ
+sigmoid activation layer -> cross entropy loss function -> 16 outputs
+
+- Model 2: 
+Multi-class classifier - single layer non-sequential - 16 classes
+sigmoid activation layer -> cross entropy loss function -> 16 outputs
+
+- Model 3: 
+4 binary classifiers for ea personality type: 
+  [Introversion v Extroversion], [Intuition v Sensing], [Feeling v Thinking], [Perceiving v Judging]
+  sigmoid activation layer -> cross entropy loss function -> 2 outputs
+  
+- Model 4: 
+4 deep binary classifiers
+reLU -> reLU -> sigmoid activation -> cross entropy loss function -> 2 outputs
+
 ## Files
 
 ### Executables
